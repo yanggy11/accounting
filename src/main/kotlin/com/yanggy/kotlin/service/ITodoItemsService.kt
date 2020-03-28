@@ -11,4 +11,5 @@ import com.yanggy.kotlin.entity.TodoItems
  */
 interface ITodoItemsService {
     fun addTodoItems(todoItems: TodoItems): ResponseEntity<Any>;
+    fun getTodoItems(todoItems: TodoItems): ResponseEntity<Any>;
 }

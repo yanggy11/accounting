@@ -25,7 +25,7 @@ class SwaggerConfiguration {
         return Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage(""))
+                .apis(RequestHandlerSelectors.basePackage("com.yanggy.kotlin.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }

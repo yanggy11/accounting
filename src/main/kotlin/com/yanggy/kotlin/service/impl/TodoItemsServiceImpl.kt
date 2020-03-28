@@ -24,11 +24,18 @@ class TodoItemsServiceImpl : ITodoItemsService {
     @Resource
     private lateinit var todoItemsMapper : TodoItemsMapper;
     override fun addTodoItems(todoItems: TodoItems): ResponseEntity<Any> {
-
         return try {
             todoItemsMapper.insert(todoItems);
-
             ResponseEntityBuilder.buildNormalResponse();
+        }catch (exception : Exception) {
+            exception.printStackTrace();
+            ResponseEntityBuilder.buildErrorResponse(ErrorCode.NORMAL);
+        };
+    }
+
+    override fun getTodoItems(todoItems: TodoItems): ResponseEntity<Any> {
+        return try {
+            ResponseEntityBuilder.buildNormalResponse( todoItemsMapper.getTodoItems(todoItems));
         }catch (exception : Exception) {
             exception.printStackTrace();
             ResponseEntityBuilder.buildErrorResponse(ErrorCode.NORMAL);
