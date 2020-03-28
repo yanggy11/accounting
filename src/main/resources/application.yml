@@ -1,0 +1,12 @@
+server:
+  port: 1988
+
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://122.51.248.106:3306/web?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull&useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+mybatis:
+  mapper-locations: classpath:sql-mapper/*.xml

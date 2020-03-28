@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yanggy.kotlin.dao.TodoItemsMapper">
+    <resultMap id="itemsMap" type="com.yanggy.kotlin.entity.TodoItems">
+        <result column="id" property="id" jdbcType="BIGINT"/>
+        <result column="user_id" property="userId" jdbcType="BIGINT"/>
+        <result column="content" property="content" jdbcType=""/>
+        <result column="create_time" property="createTime" jdbcType=""/>
+        <result column="update_time" property="updateTime" jdbcType=""/>
+        <result column="delete_flag" property="deleteFlag" jdbcType=""/>
+        <result column="type" property="type" jdbcType=""/>
+        <result column="status" property="status" jdbcType=""/>
+    </resultMap>
+</mapper>
