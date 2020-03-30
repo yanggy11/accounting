@@ -12,7 +12,7 @@ import java.math.BigInteger
  */
 
 @ApiModel(value = "TodoItems", description = "待办事项类")
-class TodoItems : BaseEntity() {
+ class TodoItems : BaseEntity() {
     @ApiModelProperty("用户id")
     lateinit var userId : BigInteger;
     @ApiModelProperty("待办事项")

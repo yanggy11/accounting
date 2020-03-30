@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+         <!DOCTYPE generatorConfiguration
+                 PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+                 "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <classPathEntry location="D:\repo\mysql\mysql-connector-java\5.1.6\mysql-connector-java-5.1.6.jar"/>
+    <context id="my" targetRuntime="MyBatis3Kotlin">
+         <commentGenerator>
+             <property name="suppressDate" value="false"/>
+             <property name="suppressAllComments" value="true"/>
+         </commentGenerator>
+
+         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                         connectionURL="jdbc:mysql://122.51.248.106:3306/AccountingSystem" userId="root"
+                         password="root"/>
+
+         <javaModelGenerator targetPackage="com.yanggy.kotlin.entity"
+                             targetProject="D:\code\accounting\src\main\kotlin">
+             <property name="enableSubPackages" value="true"/>
+             <property name="trimStrings" value="true"/>
+         </javaModelGenerator>
+
+         <sqlMapGenerator targetPackage="sql-mapper"
+                          targetProject="D:\code\accounting\src\main\resources\">
+             <property name="enableSubPackages" value="true"/>
+         </sqlMapGenerator>
+
+             <javaClientGenerator targetPackage="com.yanggy.kotlin.dao"
+                                  targetProject="D:\code\accounting\src\main\kotlin\" type="XMLMAPPER">
+                 <property name="enableSubPackages" value="true"/>
+             </javaClientGenerator>
+
+<!--        &lt;!&ndash;生成service,serviceImpl&ndash;&gt;-->
+<!--        <javaServiceGenerator targetPackage="com.yanggy.kotlin.service" targetProject="src/main/kotlin" implementationPackage="com.yanggy.kotlin.service.impl"/>-->
+
+<!--        &lt;!&ndash;生成controller&ndash;&gt;-->
+<!--        <javaControllerGenerator targetPackage="com.yanggy.kotlin.controller" targetProject="src/main/kotlin"/>-->
+
+             <table tableName="label_type" domainObjectName="LabelType" enableCountByExample="false" enableUpdateByExample="false"
+                enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"/>
+    </context>
+</generatorConfiguration>
