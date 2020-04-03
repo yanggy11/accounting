@@ -12,3 +12,9 @@ mybatis-plus:
   mapper-locations: classpath:sql-mapper/*.xml
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+jwt:
+  header: Authorization
+  secret: zhengze
+  expiration: 604800
+  tokenHead: Bearer
