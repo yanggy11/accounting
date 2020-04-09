@@ -32,13 +32,11 @@ class UserServiceImpl : IUserService {
     @Value("\${jwt.tokenHead}")
     private lateinit var tokenHead: String;
 
-    override fun login(user: com.yanggy.kotlin.entity.User): ResponseEntity<Any?>? {
-        var res:ResponseEntity<Any?>? = null
-        var authentication:Authentication? = null
+    override fun login(user: com.yanggy.kotlin.entity.User): ResponseEntity<Any?> {
         return try {
             //验证密码
             val userNamePasswordAuthentication: UsernamePasswordAuthenticationToken = UsernamePasswordAuthenticationToken(user.userName, user.password)
-            authentication = authenticationManager.authenticate(userNamePasswordAuthentication)
+            val authentication:Authentication?  = authenticationManager.authenticate(userNamePasswordAuthentication)
 
             //生成token
             if(null != authentication) {
@@ -48,8 +46,8 @@ class UserServiceImpl : IUserService {
             }else {
                 ResponseEntityBuilder.buildErrorResponse(ErrorCode.USER_PASSWORD_ERROR)
             }
-
         }catch (exception:Exception) {
+            exception.printStackTrace()
             ResponseEntityBuilder.buildErrorResponse(ErrorCode.ERROR)
         }
     }

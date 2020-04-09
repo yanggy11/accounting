@@ -16,7 +16,7 @@ import javax.annotation.Resource
  * @ClassName LoginController
  * @Author yanggy
  * @Time 2020/4/1-18:33
- * @Description
+ * @Description 用户登录、退出功能
  */
 
 @RestController
@@ -25,8 +25,9 @@ class LoginController {
 
     @Resource
     private lateinit var userService:IUserService;
+
     @PostMapping(value = ["login"])
-    fun login(@RequestBody user:User) : ResponseEntity<Any?>? {
+    fun login(@RequestBody user:User) : ResponseEntity<Any?> {
         return if(StringUtils.isBlank(user.userName) || StringUtils.isBlank(user.password)) {
             ResponseEntityBuilder.buildErrorResponse(ErrorCode.USER_PASSWORD_EMPTY);
         }else {

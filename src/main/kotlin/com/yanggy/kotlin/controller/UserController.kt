@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController
  * @ClassName UserController
  * @Author yanggy
  * @Time 2020/4/1-18:22
- * @Description
+ * @Description 后台用户、权限管理
  */
 
 @RestController

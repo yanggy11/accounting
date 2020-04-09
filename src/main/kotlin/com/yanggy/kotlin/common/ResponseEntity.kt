@@ -1,14 +1,11 @@
 package com.yanggy.kotlin.common
 
-import io.swagger.annotations.ApiModel
-
 /**
  * @ClassName ResponseEntity
  * @Author yanggy
  * @Time 2020/3/26-17:41
  * @Description
  */
-@ApiModel("接口返回值")
 class ResponseEntity<T>(var status:String, var error:String) {
     var msg:String = EMPTY_STRING;
     var data:T? = null;

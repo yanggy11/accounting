@@ -11,5 +11,5 @@ interface IUserService {
     * @Date 2020/4/3-13:48
     * @Return ResponseEntity<Any?>?
     **/
-    fun login(user: User): ResponseEntity<Any?>?
+    fun login(user: User): ResponseEntity<Any?>
 }

@@ -1,5 +1,7 @@
 server:
   port: 1988
+  servlet:
+    context-path: /accounting
 
 spring:
   datasource:
