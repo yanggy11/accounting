@@ -13,7 +13,7 @@
          </commentGenerator>
 
          <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                         connectionURL="jdbc:mysql://122.51.248.106:3306/AccountingSystem" userId="root"
+                         connectionURL="jdbc:mysql://122.51.248.106:3306/web" userId="root"
                          password="root"/>
 
          <javaModelGenerator targetPackage="com.yanggy.kotlin.entity"
@@ -40,7 +40,9 @@
 <!--               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"/>-->
 <!--        <table tableName="role_permission" domainObjectName="RolePermission" enableCountByExample="false" enableUpdateByExample="false"-->
 <!--               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"/>-->
-        <table tableName="roles" domainObjectName="Role" enableCountByExample="false" enableUpdateByExample="false"
+        <table tableName="user_wish" domainObjectName="UserWish" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"/>
+        <table tableName="user_wish_detail_list" domainObjectName="UserWishDetails" enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"/>
 <!--        <table tableName="user_role" domainObjectName="UserRole" enableCountByExample="false" enableUpdateByExample="false"-->
 <!--               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"/>-->
