@@ -1,4 +1,4 @@
-package com.yanggy.kotlin.common
+package com.yanggy.kotlin.common.enums
 
 /**
  * @ClassName ErrorCode

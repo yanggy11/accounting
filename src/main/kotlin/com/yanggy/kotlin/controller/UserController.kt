@@ -1,9 +1,14 @@
 package com.yanggy.kotlin.controller
 
+import com.yanggy.kotlin.common.ResponseEntity
+import com.yanggy.kotlin.entity.PermisionRecord
 import com.yanggy.kotlin.entity.User
+import com.yanggy.kotlin.service.IUserService
 import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
+import javax.annotation.Resource
 
 /**
  * @ClassName UserController
@@ -16,9 +21,17 @@ import org.springframework.web.bind.annotation.RestController
 @RequestMapping("/user/")
 class UserController {
 
+    @Resource
+    private lateinit var userService : IUserService
+
     @PostMapping(value = ["/getUsers"])
     fun getUsers(user:User) : List<User> {
         return ArrayList();
+    }
+
+    @PostMapping(value = ["/getMenus"])
+    fun getMenus(@RequestBody permissionRecord: PermisionRecord) : ResponseEntity<Any>? {
+        return userService.getMenus(permissionRecord)
     }
 
 }

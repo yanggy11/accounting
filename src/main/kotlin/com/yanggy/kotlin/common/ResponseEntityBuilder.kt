@@ -1,5 +1,6 @@
 package com.yanggy.kotlin.common
 
+import com.yanggy.kotlin.common.enums.ErrorCode
 
 
 /**

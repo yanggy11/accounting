@@ -1,6 +1,6 @@
 package com.yanggy.kotlin.controller
 
-import com.yanggy.kotlin.common.ErrorCode
+import com.yanggy.kotlin.common.enums.ErrorCode
 import com.yanggy.kotlin.common.ResponseEntity
 import com.yanggy.kotlin.common.ResponseEntityBuilder
 import com.yanggy.kotlin.entity.User

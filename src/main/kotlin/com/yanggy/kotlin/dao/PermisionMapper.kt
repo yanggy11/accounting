@@ -6,4 +6,5 @@ import org.apache.ibatis.annotations.Mapper
 
 @Mapper
 interface PermisionMapper : BaseMapper<PermisionRecord>{
+    fun getPermisions(permission : PermisionRecord) : List<PermisionRecord>;
 }

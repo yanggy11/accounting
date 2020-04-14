@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yanggy.kotlin.dao.PermisionMapper">
+
+    <sql id="base_columns">
+        id, permission, type, create_time createTime, update_time updateTime, remark, parent_id parentId, name, icon
+    </sql>
+    <select id="getPermisions" parameterType="com.yanggy.kotlin.entity.PermisionRecord" resultType="com.yanggy.kotlin.entity.PermisionRecord">
+        select <include refid="base_columns"/> from permisions
+        <where>
+            1 = 1
+            <if test="type != null">
+                and type = #{type}
+            </if>
+            <if test="parentId != null">
+                and parent_id = #{parentId}
+            </if>
+        </where>
+    </select>
+</mapper>

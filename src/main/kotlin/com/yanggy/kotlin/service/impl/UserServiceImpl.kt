@@ -1,14 +1,15 @@
 package com.yanggy.kotlin.service.impl
 
-import com.yanggy.kotlin.common.ErrorCode
 import com.yanggy.kotlin.common.ResponseEntity
 import com.yanggy.kotlin.common.ResponseEntityBuilder
+import com.yanggy.kotlin.common.enums.ErrorCode
 import com.yanggy.kotlin.config.jwt.JwtTokenUtil
 import com.yanggy.kotlin.config.jwt.JwtUser
+import com.yanggy.kotlin.dao.PermisionMapper
 import com.yanggy.kotlin.dao.UserMapper
 import com.yanggy.kotlin.dto.UserDto
+import com.yanggy.kotlin.entity.PermisionRecord
 import com.yanggy.kotlin.service.IUserService
-import org.apache.commons.lang3.StringUtils
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.security.authentication.AuthenticationManager
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
@@ -32,6 +33,9 @@ class UserServiceImpl : IUserService {
     @Value("\${jwt.tokenHead}")
     private lateinit var tokenHead: String;
 
+    @Resource
+    private lateinit var permissionMapper : PermisionMapper
+
     override fun login(user: com.yanggy.kotlin.entity.User): ResponseEntity<Any?> {
         return try {
             //验证密码
@@ -52,4 +56,19 @@ class UserServiceImpl : IUserService {
         }
     }
 
+    override fun getMenus(permissionRecord: PermisionRecord): ResponseEntity<Any>? {
+        return try {
+
+            var permissions : List<PermisionRecord>? = permissionMapper.getPermisions(permissionRecord);
+
+            if(null != permissions) {
+                permissions
+            }
+            ResponseEntityBuilder.buildNormalResponse()
+        }catch (exception :Exception) {
+            exception.printStackTrace()
+
+            ResponseEntityBuilder.buildErrorResponse(ErrorCode.ERROR)
+        }
+    }
 }
